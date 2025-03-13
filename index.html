@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handmade Collective</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .hero, .about-section, .contact-section {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h2, .hero p, .contact-content {
+            animation: slideInLeft 1.2s ease-in-out;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .about-section, .contact-section {
+            padding: 200px 20px;
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const homeSection = document.querySelector(".hero");
+            const aboutSection = document.querySelector("#about");
+            const contactSection = document.querySelector("#contact");
+            const homeLink = document.querySelector(".nav-item a[href='index.html']");
+            const aboutLink = document.querySelector(".nav-item a[href='#about']");
+            const contactLink = document.querySelector(".nav-item a[href='#contact']");
+
+            function hideAllSections() {
+                homeSection.classList.add("hidden");
+                aboutSection.classList.add("hidden");
+                contactSection.classList.add("hidden");
+            }
+
+            aboutLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                hideAllSections();
+                aboutSection.classList.remove("hidden");
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+            });
+
+            contactLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                hideAllSections();
+                contactSection.classList.remove("hidden");
+                contactSection.scrollIntoView({ behavior: "smooth" });
+            });
+
+            homeLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                hideAllSections();
+                homeSection.classList.remove("hidden");
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <div class="header">
+            <h1>Handmade Collective</h1>
+            <div class="craft"><p>Crafted with Passion & Uniqueness</p></div>
+        </div>
+        <div class="nav-links">
+            <div class="nav-item"><a href="index.html">Home</a></div>
+            <div class="nav-item"><a href="#about">About</a></div>
+            <div class="nav-item"><a href="#contact">Contact</a></div>
+            <div class="nav-item"><a href="login.html">My Orders</a></div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <img class="image" src="images/image1.jpg" alt="Handmade product">
+        <h2>Discover the Art of Handmade</h2>
+        <p>Explore a curated selection of unique, artisan-made products, each telling its own story.</p>
+        <div class="btn-container">
+            <a class="btn" href="shop.html">Shop Now</a>
+        </div>
+    </div>
+
+    <section id="about" class="about-section hidden">
+        <div class="about-content">
+            <h2>About Handmade Collective</h2>
+            <p>Handmade Collective is more than just a marketplace; it's a movement celebrating craftsmanship. We connect artisans with a global audience, offering handcrafted products that embody tradition and creativity.</p>
+            <p>From eco-friendly materials to personalized designs, we ensure every item is made with care and passion. Join us in supporting small businesses and keeping the spirit of handmade alive.</p>
+            <img src="images/about.jpg" alt="Artisans crafting handmade products" class="about-img">
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section hidden">
+        <div class="contact-content">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us through our social platforms or email us directly.</p>
+            <div class="contact-icons">
+                <span>📧 Email: handmadecollective@example.com</span>
+                <span>📞 Phone: +123 456 7890</span>
+                <span>📍 Location: 123 Craft Street, Artisan City</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>&copy; 2025 Handmade Collective. All rights reserved.</p>
+    </div>
+</body>
+</html>

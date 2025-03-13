@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Handmade Collective</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .shop-container {
+            text-align: center;
+            padding: 50px;
+        }
+        .shop-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .shop-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            max-width: 250px;
+        }
+        .shop-item:hover {
+            transform: scale(1.05);
+        }
+        .shop-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .shop-item h3 {
+            margin: 10px 0;
+        }
+        .shop-item p {
+            font-weight: bold;
+            color: #A67B5B;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-links">
+            <div class="nav-item"><a href="index.html">Home</a></div>
+            <div class="nav-item"><a href="index.html#about">About</a></div>
+            <div class="nav-item"><a href="index.html#contact">Contact</a></div>
+            <div class="nav-item"><a href="order.html">My Orders</a></div>
+        </div>
+    </div>
+
+    <div class="shop-container">
+        <h1>Our Handmade Collection</h1>
+        <div class="shop-items">
+            <div class="shop-item">
+                <img src="images/product1.jpg" alt="Handmade Necklace">
+                <h3>Handmade Necklace</h3>
+                <p>$25.00</p>
+            </div>
+            <div class="shop-item">
+                <img src="images/product2.jpg" alt="Wooden Carving">
+                <h3>Wooden Carving</h3>
+                <p>$40.00</p>
+            </div>
+            <div class="shop-item">
+                <img src="images/product3.jpg" alt="Handwoven Basket">
+                <h3>Handwoven Basket</h3>
+                <p>$30.00</p>
+            </div>
+            <div class="shop-item">
+                <img src="images/product4.jpg" alt="Clay Pot">
+                <h3>Clay Pot</h3>
+                <p>$20.00</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 Handmade Collective. All rights reserved.</p>
+    </div>
+</body>
+</html>

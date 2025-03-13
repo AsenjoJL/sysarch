@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register - Handmade Collective</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            color: #A67B5B;
+            font-size: 24px;
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            border: 2px solid #A67B5B;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .input-group i {
+            padding: 10px;
+            color: #A67B5B;
+            font-size: 18px;
+            background: #f9f9f9;
+            border-right: 2px solid #A67B5B;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background: transparent;
+        }
+
+        .input-group:focus-within {
+            border-color: #ff758c;
+            box-shadow: 0 0 8px rgba(255, 117, 140, 0.5);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #A67B5B;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff758c;
+            box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+        }
+
+        .toggle {
+            margin-top: 15px;
+            cursor: pointer;
+            color: #ff758c;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .toggle:hover {
+            color: #A67B5B;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function toggleForm() {
+                document.getElementById('login-box').classList.toggle('hidden');
+                document.getElementById('register-box').classList.toggle('hidden');
+            }
+
+            document.querySelectorAll(".toggle").forEach(button => {
+                button.addEventListener("click", toggleForm);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container" id="login-box">
+        <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+        <form>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p class="toggle">Don't have an account? Register</p>
+    </div>
+
+    <div class="container hidden" id="register-box">
+        <h2><i class="fas fa-user-plus"></i> Register</h2>
+        <form>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <p class="toggle">Already have an account? Login</p>
+    </div>
+</body>
+</html>
